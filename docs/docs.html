@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- Generated with Dr.js -->
-<html lang="en"><head><meta charset="utf-8"><title>Chipmunk Reference</title>
+<html lang="en"><head><meta charset="utf-8"><title>dr.js Reference</title>
 <style type="text/css" media="screen">
 html, body {
     height: 100%;
@@ -461,19 +461,6 @@ html, body {
 #dr {
     margin: 0 auto;
 }
-.dr-doc code
-{
-	background: #FFF;
-	border-radius: 5px;
-	padding: 0 6px;
-	border: 1px solid #CCC;
-}
-.dr-doc pre code
-{
-	background: none;
-	padding: 0;
-	border: none;
-}
 .dr-doc code,
 .dr-type em,
 .dr-returns em,
@@ -798,73 +785,128 @@ p {
 
 </style>
 </head>
-<body id="dr-js"><div id="dr"><ol class="dr-toc" id="dr-toc"><li class="dr-lvl0"><a href="#Chipmunk" class="dr-class"><span>Chipmunk</span></a></li><li class="dr-lvl1"><a href="#Chipmunk.nuts" class="dr-method"><span>Chipmunk.nuts()</span></a></li><li class="dr-lvl0"><a href="#Donald" class="dr-class"><span>Donald</span></a></li><li class="dr-lvl1"><a href="#Donald.attack" class="dr-method"><span>Donald.attack()</span></a></li><li class="dr-lvl1"><a href="#Donald.mood" class="dr-method"><span>Donald.mood()</span></a></li></ol><div class="dr-doc"><h1>Chipmunk Reference</h1><div class="Chipmunk-section"><h2 id="Chipmunk" class="dr-class"><i class="dr-trixie">&#160;</i>Chipmunk<a href="#Chipmunk" title="Link to this section" class="dr-hash">&#x2693;</a><a class="dr-sourceline" title="Go to line 13 in the source" href="https://github.com/tyt2y3/dr.js/blob/master/sample/chipmunk.js#L13">&#x27ad;</a></h2>
-<div class="extra" id="Chipmunk-extra"></div></div><div class="dr-class"><p>creates a chipmunk
+<body id="dr-js"><div id="dr"><ol class="dr-toc" id="dr-toc"><li class="dr-lvl0"><a href="#A) Intro" class="{clas}"><span>A) Intro</span></a></li><li class="dr-lvl0"><a href="#B) Features" class="{clas}"><span>B) Features</span></a></li><li class="dr-lvl0"><a href="#C) Usage" class="{clas}"><span>C) Usage</span></a></li><li class="dr-lvl0"><a href="#D) json config" class="{clas}"><span>D) json config</span></a></li><li class="dr-lvl0"><a href="#E) Format" class="{clas}"><span>E) Format</span></a></li><li class="dr-lvl0"><a href="#F) Change log" class="{clas}"><span>F) Change log</span></a></li></ol><div class="dr-doc"><h1>dr.js Reference</h1><div class="A) Intro-section"><h2 id="A) Intro" class="undefined"><i class="dr-trixie">&#160;</i>A) Intro<a href="#A) Intro" title="Link to this section" class="dr-hash">&#x2693;</a><a class="dr-sourceline" title="Go to line 7 in the source" href="https://github.com/tyt2y3/dr.js/blob/master/docs/docs.js#L7">&#x27ad;</a></h2>
+<div class="extra" id="A) Intro-extra"></div></div><p>A tiny but powerful documentation builder for Javascript projects. dr.js is built on top of node.js and is a pure javascript documentation solution for javascript, cool!
 </p>
-<p class="header">Parameters
+<p>In fact, this page is the result of running dr.js!
 </p>
-<dl class="dr-parameters"><dt class="dr-param">type</dt>
-<dd class="dr-type"><em class="dr-type-string">string</em></dd>
-<dd class="dr-description">can be of <code>&#39;chip&#39;</code> or <code>&#39;dale&#39;</code></dd>
-</dl>
-<p class="dr-returns"><strong class="dr-title">Returns:</strong> <em class="dr-type-object">object</em> <span class="dr-description">a Chipmunk object</span></p>
-<p class="header">Usage
-</p>
-<pre class="javascript code"><code><b>var</b> chip<span class="s"> = </span><b>new</b> Chipmunk(<i>'chip'</i>);
-<b>var</b> dale<span class="s"> = </span><b>new</b> Chipmunk(<i>'dale'</i>);
+<div class="B) Features-section"><h2 id="B) Features" class="undefined"><i class="dr-trixie">&#160;</i>B) Features<a href="#B) Features" title="Link to this section" class="dr-hash">&#x2693;</a><a class="dr-sourceline" title="Go to line 21 in the source" href="https://github.com/tyt2y3/dr.js/blob/master/docs/docs.js#L21">&#x27ad;</a></h2>
+<div class="extra" id="B) Features-extra"></div></div><ul>
+<li>searchbox to filter methods and properties</li>
+<li>generated document is a single file html, which is neat</li>
+<li>anchors and internal links</li>
+<li>link back to exact line of source code on github</li>
+<li>colorful tags plus syntax highlighted code snippets</li>
+<li>printer friendly version</li>
+<li>example: <a href="http://raphaeljs.com/reference.html">Raphael</a> documentation is built with dr.js</li>
+<li>example2: <a href="https://github.com/tyt2y3/dr.js/blob/master/sample">source</a> and <a href="http://tyt2y3.github.com/dr.js/sample/docs.html">documentation</a></li>
+</ul>
+<div class="C) Usage-section"><h2 id="C) Usage" class="undefined"><i class="dr-trixie">&#160;</i>C) Usage<a href="#C) Usage" title="Link to this section" class="dr-hash">&#x2693;</a><a class="dr-sourceline" title="Go to line 36 in the source" href="https://github.com/tyt2y3/dr.js/blob/master/docs/docs.js#L36">&#x27ad;</a></h2>
+<div class="extra" id="C) Usage-extra"></div></div><ul>
+<li>first install <a href="http://nodejs.org/">node.js</a> and npm
+<li>in the `dr.js/` directory, run `npm install`
+<ul>
+<li> if you work on a NTFS partition, you may receive `Error: EPERM, symlink '../nopt/bin/nopt.js'`</li>
+<li> in this case you should copy `dr.js/node_modules/markdown/node_modules/nopt/bin/nopt.js` to `dr.js/node_modules/markdown/node_modules/.bin/nopt.js` manually</li>
+</ul>
+</li>
+<li>then run</li>
+</ul>
+<pre class="javascript code"><code>node dr config.json
 </code></pre>
-</div><div class="Chipmunk-nuts-section"><h3 id="Chipmunk.nuts" class="dr-method"><i class="dr-trixie">&#160;</i>Chipmunk.nuts(num)<a href="#Chipmunk.nuts" title="Link to this section" class="dr-hash">&#x2693;</a><a class="dr-sourceline" title="Go to line 28 in the source" href="https://github.com/tyt2y3/dr.js/blob/master/sample/chipmunk.js#L28">&#x27ad;</a></h3>
-<div class="extra" id="Chipmunk.nuts-extra"></div></div><div class="dr-method"><p>give a specified number of nuts to it
+<div class="D) json config-section"><h2 id="D) json config" class="undefined"><i class="dr-trixie">&#160;</i>D) json config<a href="#D) json config" title="Link to this section" class="dr-hash">&#x2693;</a><a class="dr-sourceline" title="Go to line 69 in the source" href="https://github.com/tyt2y3/dr.js/blob/master/docs/docs.js#L69">&#x27ad;</a></h2>
+<div class="extra" id="D) json config-extra"></div></div><p>example
 </p>
-<p class="header">Parameters
-</p>
-<dl class="dr-parameters"><dt class="dr-param">num</dt>
-<dd class="dr-type"><em class="dr-type-number">number</em></dd>
-<dd class="dr-description">number of nuts</dd>
-</dl>
-<p class="header">Usage
-</p>
-<pre class="javascript code"><code>chip.nuts(<span class="d">5</span>); <span class="c">//give <span class="d">5</span> nuts to you!</span>
+<pre class="javascript code"><code>{
+    <i>"title"</i>: <i>"Chipmunk"</i>,
+    <i>"output"</i>: <i>"docs.html"</i>,
+    <i>"scripts"</i>: [],
+    <i>"files"</i>: [{
+        <i>"path"</i>: <i>"chipmunk.js"</i>,
+        <i>"link"</i>: <i>"https:<span class="c">//github.com/tyt2y3/dr.js/blob/master/sample/chipmunk.js"</i></span>
+    }],
+    <i>"external_css"</i>: <b>false</b>,
+    <i>"external_js"</i>: <b>false</b>
+}
 </code></pre>
-</div><div class="Donald-section"><h2 id="Donald" class="dr-class"><i class="dr-trixie">&#160;</i>Donald<a href="#Donald" title="Link to this section" class="dr-hash">&#x2693;</a><a class="dr-sourceline" title="Go to line 14 in the source" href="https://github.com/tyt2y3/dr.js/blob/master/sample/donald.js#L14">&#x27ad;</a></h2>
-<div class="extra" id="Donald-extra"></div></div><div class="dr-class"><p>Donald is the enemy of Chip and Dale, and always loses when fighting with them
+<p><code>title</code> is the text that will appear in <code>&lt;head&gt;&lt;title&gt;</code> and <code>&lt;body&gt;&lt;h1&gt;</code>
 </p>
-<p>initially Donald starts with a happy mood
+<p><code>output</code> is the output html
 </p>
-<p>creates a Mr.Donald duck
+<p><code>scripts</code> are javasript files that will be included into the html via a <code>&lt;script&gt;</code> tag.
 </p>
-<p class="dr-returns"><strong class="dr-title">Returns:</strong> <em class="dr-type-object">object</em> <span class="dr-description">a Donald object</span></p>
-<p class="header">Usage
+<p>this allows you to manipulate the html dynamically. since Raphael is a javascript library, <code>raphael.js</code> itself is being included into the documentation to make life examples, which is remarkable to javascript projects.
 </p>
-<pre class="javascript code"><code><b>var</b> donald<span class="s"> = </span><b>new</b> Donald();
+<p><code>files</code> are the script files to be processed
+</p>
+<p>   <code>path</code> is the url of the file
+   <code>link</code> is the link to a pretty printed version of the script file. every method and property remembers its line number in the source, clicking the ➭ button will bring you to <code>link#L12</code> where L12 is the line number.
+</p>
+<p><code>external_css</code>; optional, if set to true, the css files will be linked via a <code>&lt;link rel=&quot;stylesheet&quot;&gt;</code> tag. default is false, which the css files are embedded into html, so that <code>docs.html</code> is really a standalone, good-to-go html documentation.
+</p>
+<p><code>external_js</code>; similar to <code>external_css</code>, whether to embed the files specified in <code>scripts</code>
+</p>
+<p></p>
+<div class="E) Format-section"><h2 id="E) Format" class="undefined"><i class="dr-trixie">&#160;</i>E) Format<a href="#E) Format" title="Link to this section" class="dr-hash">&#x2693;</a><a class="dr-sourceline" title="Go to line 116 in the source" href="https://github.com/tyt2y3/dr.js/blob/master/docs/docs.js#L116">&#x27ad;</a></h2>
+<div class="extra" id="E) Format-extra"></div></div><p>dr.js uses the <code>dr</code> format, which starts a section with <code>/*\</code> and end with <code>\*/</code>.
+</p>
+<p>Each line in a section starts with a symbol, the symbols can be
+</p>
+<p><code>*</code> normal text, with markdown
+</p>
+<p><code>**</code> ignor this line
+</p>
+<p><code>[</code> usage is <code>[ tag ]</code>, where tag can be
+</p>
+<p>   <code>class</code>, <code>method</code> and <code>property</code>
+</p>
+<p><code>&gt;</code> sub heading
+</p>
+<p><code>-</code> parameter, with <code>(type)</code> to indicate type, types can be
+</p>
+<p>   (object) (number) (string) (function) (boolean) (array)
+</p>
+<p><code>=</code> return value
+</p>
+<p><code>|</code> code block
+</p>
+<p><code>o</code> ordered list
+</p>
+<p><code>#</code> inline HTML
+</p>
+<p>something like,
+</p>
+<pre class="javascript code"><code>/*\
+<span class="s"> * </span>IdentifierName
+ [ tag ]
+ ** ignor
+<span class="s"> * </span>normal text @link
+ > sub heading
+<span class="s"> - </span>parameter (type) description
+<span class="s"> = </span>(type) <b>return</b> value description
+<span class="s"> | </span><b>var</b> x=<span class="d">2</span>, y=[<span class="d">1</span>,<span class="d">2</span>,<span class="d">3</span>]; <span class="c">//code block</span>
+ o list item
+ # HTML &lt;a href=<i>""</i>>link&lt;/a>
+\*/
 </code></pre>
-</div><div class="Donald-attack-section"><h3 id="Donald.attack" class="dr-method"><i class="dr-trixie">&#160;</i>Donald.attack(target)<a href="#Donald.attack" title="Link to this section" class="dr-hash">&#x2693;</a><a class="dr-sourceline" title="Go to line 54 in the source" href="https://github.com/tyt2y3/dr.js/blob/master/sample/donald.js#L54">&#x27ad;</a></h3>
-<div class="extra" id="Donald.attack-extra"></div></div><div class="dr-method"><p class="header">Parameters
+<p></p>
+<p>Words starting with <code>@</code> will be turned into internal links.
 </p>
-<dl class="dr-parameters"><dt class="dr-param">target</dt>
-<dd class="dr-type"><em class="dr-type-object">object</em></dd>
-<dd class="dr-description">the target <a href="#Chipmunk" class="dr-link">Chipmunk</a> to attack</dd>
-</dl>
-<p class="dr-returns"><strong class="dr-title">Returns:</strong> <em class="dr-type-number">number</em> <span class="dr-description">hp deducted from target</span></p>
-</div><div class="Donald-mood-section"><h3 id="Donald.mood" class="dr-method"><i class="dr-trixie">&#160;</i>Donald.mood(…)<a href="#Donald.mood" title="Link to this section" class="dr-hash">&#x2693;</a><a class="dr-sourceline" title="Go to line 34 in the source" href="https://github.com/tyt2y3/dr.js/blob/master/sample/donald.js#L34">&#x27ad;</a></h3>
-<div class="extra" id="Donald.mood-extra"></div></div><div class="dr-method"><p class="header">getter
+<p>The start of each section is given a <code>&lt;div class=&quot;extra&quot; id=&quot;IdentifierName-extra&quot;&gt;&lt;/div&gt;</code> element for manipulation by javascript.
 </p>
-<dl class="dr-parameters"><dt class="dr-param">no parameter</dt>
-<dd class="dr-type"><em class="dr-type-null">null</em></dd>
-<dd class="dr-description">&#160;</dd>
-</dl>
-<p class="dr-returns"><strong class="dr-title">Returns:</strong> <em class="dr-type-string">string</em> <span class="dr-description">current mood of Donald</span></p>
-<p class="header">setter
-<p>set the mood of Donald
-</p>
-<dl class="dr-parameters"><dt class="dr-param">mood</dt>
-<dd class="dr-type"><em class="dr-type-string">string</em></dd>
-<dd class="dr-description">&#160;</dd>
-</dl>
-<p>possible values are:
-</p>
-<ol class="dr-json"><li>'happy' Donald is whistling<li>'angry' Donald is going to attack the chipmunks!<li>'upset' Donald loses his fight with them</ol>
-</div></div></div>
+<div class="F) Change log-section"><h2 id="F) Change log" class="undefined"><i class="dr-trixie">&#160;</i>F) Change log<a href="#F) Change log" title="Link to this section" class="dr-hash">&#x2693;</a><a class="dr-sourceline" title="Go to line 131 in the source" href="https://github.com/tyt2y3/dr.js/blob/master/docs/docs.js#L131">&#x27ad;</a></h2>
+<div class="extra" id="F) Change log-extra"></div></div><ul>
+<li>Jan26 2013
+  <ul>
+  <li>forked from <a href="https://github.com/DmitryBaranovskiy/dr.js">DmitryBaranovskiy/dr.js</a></li>
+  <li>support working in a different directory</li>
+  <li>by default embed the css and js files</li>
+  <li>besides `method` and `property`, added tag `class`</li>
+  <li>readme and usage examples</li>
+  </ul>
+</li>
+</ul>
+</div></div>
 <script>(function (ol) {
     if (!ol) {
         return;

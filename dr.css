@@ -50,6 +50,19 @@ html, body {
     background: #c00;
     color: #fff;
 }
+.dr-doc code
+{
+	background: #FFF;
+	border-radius: 5px;
+	padding: 0 6px;
+	border: 1px solid #CCC;
+}
+.dr-doc pre code
+{
+	background: none;
+	padding: 0;
+	border: none;
+}
 .dr-doc code,
 .dr-type em,
 .dr-returns em,
