@@ -42,9 +42,7 @@ example
   projects.
 - `files` are the script files to be processed
 	- `path` is the url of the file
-	- `link` is the link to a pretty printed version of the script file
-
-	  every method and property remembers its line number in the source, clicking the ➭ button will bring
+	- `link` is the link to a pretty printed version of the script file. every method and property remembers its line number in the source, clicking the ➭ button will bring
 	  you to `link#L12` where L12 is the line number.
 - `external_css`; optional, if set to true, the css files will be linked via a
   `<link rel="stylesheet">` tag. default is false, which the css files are embedded into html,
