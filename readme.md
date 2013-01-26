@@ -10,6 +10,7 @@ A tiny but powerful documentation builder for Javascript projects. dr.js is buil
 - printer friendly version
 - example: [Raphael](http://raphaeljs.com/reference.html) documentation is built with dr.js
 - example2: [source](https://github.com/tyt2y3/dr.js/blob/master/sample) and [documentation](http://tyt2y3.github.com/dr.js/sample/docs.html)
+- example3: [docs](http://tyt2y3.github.com/dr.js/sample/docs.html)
 
 ## Usage
 - first install [node.js](http://nodejs.org/) and npm
