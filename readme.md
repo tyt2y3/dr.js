@@ -2,7 +2,7 @@
 A tiny but powerful documentation builder for Javascript projects. dr.js is built on top of node.js and is a pure javascript documentation solution for javascript, cool!
 
 ## Features
-- searchbox that searchs through methods and properties
+- searchbox to filter methods and properties
 - generated document is a single file html, which is neat
 - anchors and internal links
 - link back to exact line of source code on github
@@ -14,8 +14,8 @@ A tiny but powerful documentation builder for Javascript projects. dr.js is buil
 ## Usage
 - first install [node.js](http://nodejs.org/) and npm
 - in the `dr.js/` directory, run `npm install`
-> if you work on a NTFS partition, you may receive `Error: EPERM, symlink '../nopt/bin/nopt.js'`
-> in this case you should copy `dr.js/node_modules/markdown/node_modules/nopt/bin/nopt.js` to `dr.js/node_modules/markdown/node_modules/.bin/nopt.js` manually
+>	if you work on a NTFS partition, you may receive `Error: EPERM, symlink '../nopt/bin/nopt.js'`
+>	in this case you should copy `dr.js/node_modules/markdown/node_modules/nopt/bin/nopt.js` to `dr.js/node_modules/markdown/node_modules/.bin/nopt.js` manually
 - run `node dr config.json`
 
 ## json config
