@@ -82,6 +82,7 @@ something like,
 ```
 
 Words starting with `@` will be turned into internal links.
+
 The start of each section is given a `<div class="extra" id="IdentifierName-extra"></div>` element for manipulation by javascript.
 
 ## Change log
