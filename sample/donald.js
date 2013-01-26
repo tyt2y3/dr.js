@@ -3,7 +3,9 @@
  [ class ]
  **
  * Donald is the enemy of Chip and Dale, and always loses when fighting with them
+ *
  * initially Donald starts with a happy mood
+ *
  * creates a Mr.Donald duck
  = (object) a Donald object
  > Usage
