@@ -49,6 +49,41 @@ example
   so that `docs.html` is really a standalone, good-to-go html documentation.
 - `external_js`; similar to `external_css`, whether to embed the files specified in `scripts`
 
+## Format
+dr.js uses the `dr` format, which starts a section with `/*\` and end with `\*/`.
+Each line in a section starts with a symbol
+the symbols can be
+- `*` normal text, with markdown
+- `**` ignor this line
+- `[` usage is `[ tag ]`, where tag can be
+	- `class`, `method` and `property`
+- `>` sub heading
+- `-` parameter, with `(type)` to indicate type, types can be
+	- `object` `number` `string` `function` `boolean` `array`
+- `=` return value
+- `|` code block
+- `o` ordered list
+- `#` inline HTML
+
+something like,
+```
+/*\
+ * IdentifierName
+ [ tag ]
+ ** ignor
+ * normal text @link
+ > sub heading
+ - parameter (type) description
+ = (type) return value description
+ | var x=2, y=[1,2,3]; //code block
+ o list item
+ # HTML <a href="">link</a>
+\*/
+```
+
+Words starting with `@` will be turned into internal links.
+The start of each section is given a `<div class="extra" id="IdentifierName-extra"></div>` element for manipulation by javascript.
+
 ## Change log
 - Jan26 2013
 	- forked from [DmitryBaranovskiy/dr.js](https://github.com/DmitryBaranovskiy/dr.js)
