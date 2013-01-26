@@ -1,0 +1,11 @@
+{
+    "title": "Chipmunk",
+    "output": "docs.html",
+    "scripts": [],
+    "files": [{
+        "path": "chipmunk.js",
+        "link": "https://github.com/tyt2y3/dr.js/blob/master/sample/chipmunk.js"
+    }],
+    "external_css": false,
+    "external_js": false
+}

@@ -11,14 +11,13 @@ var fs = require("fs"),
     _ref = require("child_process"),
     spawn = _ref.spawn,
     exec = _ref.exec;
+
 function getPath(filepath) {
     return "docs/" + path.basename(filepath, path.extname(filepath));
 }
 
-// exec("mkdir -p docs");
-// exec("cp " + __dirname + "/dr.css docs/dr.css");
-
-var files = process.argv.slice(0),
+var files = process.argv.slice(2),
+	basepath = path.dirname(process.argv[1]),
     srcs = [],
     chunks = {},
     title = "",
@@ -26,7 +25,6 @@ var files = process.argv.slice(0),
     scripts = [],
     fileName,
     toc = [];
-files.splice(0, 2);
 
 if (!files.length) {
     console.log("\nUsage: node dr <conf.json>");
@@ -84,11 +82,21 @@ for (i = 0, ii = toc.length; i < ii; i++) if (!i || toc[i].name != toc[i - 1].na
     TOC += format('<li class="dr-lvl{indent}"><a href="#{name}" class="{clas}"><span>{name}{brackets}</span></a></li>', toc[i]);
     RES += chunks[toc[i].name] || "";
 }
-var html = '<!DOCTYPE html>\n<!-- Generated with Dr.js -->\n<html lang="en"><head><meta charset="utf-8"><title>' + title + ' Reference</title>\n<link rel="stylesheet" href="dr.css" media="screen">\n<link rel="stylesheet" href="dr-print.css" media="print"></head>\n<body id="dr-js"><div id="dr"><ol class="dr-toc" id="dr-toc">' + TOC + '</ol><div class="dr-doc"><h1>' + title + ' Reference</h1>' + RES + "</div></div>\n";
+
+var css;
+if( json.external_css)
+	css = '<link rel="stylesheet" href="dr.css" media="screen">\n<link rel="stylesheet" href="dr-print.css" media="print">';
+else
+	css = '<style type="text/css" media="screen">\n'+fs.readFileSync(path.join(basepath,"dr.css"), "utf-8")+'\n</style>\n'+
+	      '<style type="text/css" media="print">\n'+fs.readFileSync(path.join(basepath,"dr-print.css"), "utf-8")+'\n</style>';
+var html = '<!DOCTYPE html>\n<!-- Generated with Dr.js -->\n<html lang="en"><head><meta charset="utf-8"><title>' + title + ' Reference</title>\n' + css + '\n</head>\n<body id="dr-js"><div id="dr"><ol class="dr-toc" id="dr-toc">' + TOC + '</ol><div class="dr-doc"><h1>' + title + ' Reference</h1>' + RES + "</div></div>\n";
 for (i = 0, ii = scripts.length; i < ii; i++) {
-    html += '<script src="' + scripts[i] + '"></script>\n';
+	if( json.external_js)
+		html += '<script src="' + scripts[i] + '"></script>\n';
+	else
+		html += '<script>\n' + fs.readFileSync(scripts[i], "utf-8") + '\n</script>\n';
 }
-html += "<script>" + fs.readFileSync("toc.js", "utf-8") + "</script>\n</body></html>";
+html += "<script>" + fs.readFileSync(path.join(basepath,"toc.js"), "utf-8") + "</script>\n</body></html>";
 fs.writeFile(output || (getPath(fileName) + ".html"), html, function () {
     console.log("Saved to \033[32m" + (output || getPath(fileName) + ".html") + "\033[0m\n");
 });
