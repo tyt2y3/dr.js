@@ -52,8 +52,7 @@ example
 ## Format
 dr.js uses the `dr` format, which starts a section with `/*\` and end with `\*/`.
 
-Each line in a section starts with a symbol
-the symbols can be
+Each line in a section starts with a symbol, the symbols can be
 - `*` normal text, with markdown
 - `**` ignor this line
 - `[` usage is `[ tag ]`, where tag can be
