@@ -36,13 +36,14 @@ example
 ```
 - `title` is the text that will appear in `<head><title>` and `<body><h1>`
 - `output` is the output html
-- `scripts` are javasript files that will be included into the html via a `<script src="">` tag.
-  this allows you post-process the html in runtime. since Raphael is a javascript library, `raphael.js`
+- `scripts` are javasript files that will be included into the html via a `<script>` tag.
+  this allows you to manipulate the html dynamically. since Raphael is a javascript library, `raphael.js`
   itself is being included into the documentation to make life examples, which is remarkable to javascript
   projects.
 - `files` are the script files to be processed
 	- `path` is the url of the file
 	- `link` is the link to a pretty printed version of the script file
+
 	  every method and property remembers its line number in the source, clicking the ➭ button will bring
 	  you to `link#L12` where L12 is the line number.
 - `external_css`; optional, if set to true, the css files will be linked via a
@@ -52,6 +53,7 @@ example
 
 ## Format
 dr.js uses the `dr` format, which starts a section with `/*\` and end with `\*/`.
+
 Each line in a section starts with a symbol
 the symbols can be
 - `*` normal text, with markdown
