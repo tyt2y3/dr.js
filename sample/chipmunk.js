@@ -1,13 +1,14 @@
 /*\
  * Chipmunk
- [ method ]
+ [ class ]
  **
  * creates a chipmunk
  > Parameters
- - type (string) can be of `chip` or `dale`
+ - type (string) can be of `'chip'` or `'dale'`
  = (object) a Chipmunk object
  > Usage
  | var chip = new Chipmunk('chip');
+ | var dale = new Chipmunk('dale');
 \*/
 function Chipmunk(type)
 {

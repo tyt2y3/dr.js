@@ -193,6 +193,12 @@ h3 {
 h2 {
     font-size: 38px;
 }
+h2.dr-class,
+h3.dr-class,
+h4.dr-class,
+h5.dr-class {
+    color: #009;
+}
 h2.dr-method,
 h3.dr-method,
 h4.dr-method,
@@ -203,7 +209,7 @@ h2.dr-property,
 h3.dr-property,
 h4.dr-property,
 h5.dr-property {
-    color: #009;
+    color: #090;
 }
 i.dr-trixie {
 	display: none;
@@ -247,8 +253,11 @@ p.header {
 .dr-toc li.dr-lvl6 a {
     padding-left: 6em;
 }
-.dr-toc a.dr-property {
+.dr-toc a.dr-class {
     color: #339;
+}
+.dr-toc a.dr-property {
+    color: #393;
 }
 .dr-toc a.dr-method {
     color: #933;
@@ -256,8 +265,11 @@ p.header {
 .dr-toc a:hover {
     text-shadow: 0 0 2px #333;
 }
-.dr-toc a.dr-property:hover {
+.dr-toc a.dr-class:hover {
     text-shadow: 0 0 2px #66c;
+}
+.dr-toc a.dr-property:hover {
+    text-shadow: 0 0 2px #6c6;
 }
 .dr-toc a.dr-method:hover {
     text-shadow: 0 0 2px #c66;

@@ -3,6 +3,7 @@
 <html lang="en"><head><meta charset="utf-8"><title>Chipmunk Reference</title>
 <style type="text/css" media="screen">
 html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
 }
@@ -10,6 +11,7 @@ html, body {
     background: #999;
     margin: 0;
     padding: 0;
+    overflow-y: hidden;
 }
 #src-dr-js {
     background: #000;
@@ -21,21 +23,23 @@ html, body {
     border-right: solid #eee 3px;
     float: right;
     font: 300 16px/1.4 "Myriad Pro", "Helvetica Neue", Helvetica, "Arial Unicode MS", Arial, sans-serif;
-    margin: 0 -275px 0 0;
-    padding: 0 30px 10px;
+    height: 100%;
+    margin: 0;
+    overflow: auto;
+    padding: 0 30px;
     width: 800px;
-	border-right: 275px solid #ddd;
 }
 .dr-toc {
-    background: #ddd;
-    border-right: solid #ddd 3px;
-    float: right;
-    font-family: Menlo, Consolas, Monaco, "Lucida Console", monospace;
-    list-style: none;
     margin: 0;
     padding: 0 16px;
+    background: #ddd;
+    list-style: none;
+    font-family: Menlo, Consolas, Monaco, "Lucida Console", monospace;
+    overflow: auto;
+    border-right: solid #ddd 3px;
+    height: 100%;
+    float: right;
     width: 240px;
-	position: relative;
 }
 #dr {
     margin: 0 auto;
@@ -214,6 +218,12 @@ h3 {
 h2 {
     font-size: 38px;
 }
+h2.dr-class,
+h3.dr-class,
+h4.dr-class,
+h5.dr-class {
+    color: #009;
+}
 h2.dr-method,
 h3.dr-method,
 h4.dr-method,
@@ -224,7 +234,7 @@ h2.dr-property,
 h3.dr-property,
 h4.dr-property,
 h5.dr-property {
-    color: #009;
+    color: #090;
 }
 i.dr-trixie {
     border: solid 10px #eee;
@@ -276,8 +286,11 @@ p.header {
 .dr-toc li.dr-lvl6 a {
     padding-left: 6em;
 }
-.dr-toc a.dr-property {
+.dr-toc a.dr-class {
     color: #339;
+}
+.dr-toc a.dr-property {
+    color: #393;
 }
 .dr-toc a.dr-method {
     color: #933;
@@ -285,8 +298,11 @@ p.header {
 .dr-toc a:hover {
     text-shadow: 0 0 2px #333;
 }
-.dr-toc a.dr-property:hover {
+.dr-toc a.dr-class:hover {
     text-shadow: 0 0 2px #66c;
+}
+.dr-toc a.dr-property:hover {
+    text-shadow: 0 0 2px #6c6;
 }
 .dr-toc a.dr-method:hover {
     text-shadow: 0 0 2px #c66;
@@ -597,6 +613,12 @@ h3 {
 h2 {
     font-size: 38px;
 }
+h2.dr-class,
+h3.dr-class,
+h4.dr-class,
+h5.dr-class {
+    color: #009;
+}
 h2.dr-method,
 h3.dr-method,
 h4.dr-method,
@@ -607,7 +629,7 @@ h2.dr-property,
 h3.dr-property,
 h4.dr-property,
 h5.dr-property {
-    color: #009;
+    color: #090;
 }
 i.dr-trixie {
 	display: none;
@@ -651,8 +673,11 @@ p.header {
 .dr-toc li.dr-lvl6 a {
     padding-left: 6em;
 }
-.dr-toc a.dr-property {
+.dr-toc a.dr-class {
     color: #339;
+}
+.dr-toc a.dr-property {
+    color: #393;
 }
 .dr-toc a.dr-method {
     color: #933;
@@ -660,8 +685,11 @@ p.header {
 .dr-toc a:hover {
     text-shadow: 0 0 2px #333;
 }
-.dr-toc a.dr-property:hover {
+.dr-toc a.dr-class:hover {
     text-shadow: 0 0 2px #66c;
+}
+.dr-toc a.dr-property:hover {
+    text-shadow: 0 0 2px #6c6;
 }
 .dr-toc a.dr-method:hover {
     text-shadow: 0 0 2px #c66;
@@ -741,23 +769,25 @@ p {
     width: 70px;
     text-align: right;
 }
+
 </style>
 </head>
-<body id="dr-js"><div id="dr"><ol class="dr-toc" id="dr-toc"><li class="dr-lvl0"><a href="#Chipmunk" class="dr-method"><span>Chipmunk()</span></a></li><li class="dr-lvl1"><a href="#Chipmunk.nuts" class="dr-method"><span>Chipmunk.nuts()</span></a></li></ol><div class="dr-doc"><h1>Chipmunk Reference</h1><div class="Chipmunk-section"><h2 id="Chipmunk" class="dr-method"><i class="dr-trixie">&#160;</i>Chipmunk(type)<a href="#Chipmunk" title="Link to this section" class="dr-hash">&#x2693;</a><a class="dr-sourceline" title="Go to line 12 in the source" href="https://github.com/tyt2y3/dr.js/blob/master/sample/chipmunk.js#L12">&#x27ad;</a></h2>
-<div class="extra" id="Chipmunk-extra"></div></div><div class="dr-method"><p>creates a chipmunk
+<body id="dr-js"><div id="dr"><ol class="dr-toc" id="dr-toc"><li class="dr-lvl0"><a href="#Chipmunk" class="dr-class"><span>Chipmunk</span></a></li><li class="dr-lvl1"><a href="#Chipmunk.nuts" class="dr-method"><span>Chipmunk.nuts()</span></a></li><li class="dr-lvl0"><a href="#Donald" class="dr-class"><span>Donald</span></a></li><li class="dr-lvl1"><a href="#Donald.attack" class="dr-method"><span>Donald.attack()</span></a></li><li class="dr-lvl1"><a href="#Donald.mood" class="dr-method"><span>Donald.mood()</span></a></li></ol><div class="dr-doc"><h1>Chipmunk Reference</h1><div class="Chipmunk-section"><h2 id="Chipmunk" class="dr-class"><i class="dr-trixie">&#160;</i>Chipmunk<a href="#Chipmunk" title="Link to this section" class="dr-hash">&#x2693;</a><a class="dr-sourceline" title="Go to line 13 in the source" href="https://github.com/tyt2y3/dr.js/blob/master/sample/chipmunk.js#L13">&#x27ad;</a></h2>
+<div class="extra" id="Chipmunk-extra"></div></div><div class="dr-class"><p>creates a chipmunk
 </p>
 <p class="header">Parameters
 </p>
 <dl class="dr-parameters"><dt class="dr-param">type</dt>
 <dd class="dr-type"><em class="dr-type-string">string</em></dd>
-<dd class="dr-description">can be of <code>chip</code> or <code>dale</code></dd>
+<dd class="dr-description">can be of <code>&#39;chip&#39;</code> or <code>&#39;dale&#39;</code></dd>
 </dl>
 <p class="dr-returns"><strong class="dr-title">Returns:</strong> <em class="dr-type-object">object</em> <span class="dr-description">a Chipmunk object</span></p>
 <p class="header">Usage
 </p>
 <pre class="javascript code"><code><b>var</b> chip<span class="s"> = </span><b>new</b> Chipmunk(<i>'chip'</i>);
+<b>var</b> dale<span class="s"> = </span><b>new</b> Chipmunk(<i>'dale'</i>);
 </code></pre>
-</div><div class="Chipmunk-nuts-section"><h3 id="Chipmunk.nuts" class="dr-method"><i class="dr-trixie">&#160;</i>Chipmunk.nuts(num)<a href="#Chipmunk.nuts" title="Link to this section" class="dr-hash">&#x2693;</a><a class="dr-sourceline" title="Go to line 27 in the source" href="https://github.com/tyt2y3/dr.js/blob/master/sample/chipmunk.js#L27">&#x27ad;</a></h3>
+</div><div class="Chipmunk-nuts-section"><h3 id="Chipmunk.nuts" class="dr-method"><i class="dr-trixie">&#160;</i>Chipmunk.nuts(num)<a href="#Chipmunk.nuts" title="Link to this section" class="dr-hash">&#x2693;</a><a class="dr-sourceline" title="Go to line 28 in the source" href="https://github.com/tyt2y3/dr.js/blob/master/sample/chipmunk.js#L28">&#x27ad;</a></h3>
 <div class="extra" id="Chipmunk.nuts-extra"></div></div><div class="dr-method"><p>give a specified number of nuts to it
 </p>
 <p class="header">Parameters
@@ -770,6 +800,42 @@ p {
 </p>
 <pre class="javascript code"><code>chip.nuts(<span class="d">5</span>); <span class="c">//give <span class="d">5</span> nuts to you!</span>
 </code></pre>
+</div><div class="Donald-section"><h2 id="Donald" class="dr-class"><i class="dr-trixie">&#160;</i>Donald<a href="#Donald" title="Link to this section" class="dr-hash">&#x2693;</a><a class="dr-sourceline" title="Go to line 12 in the source" href="https://github.com/tyt2y3/dr.js/blob/master/sample/donald.js#L12">&#x27ad;</a></h2>
+<div class="extra" id="Donald-extra"></div></div><div class="dr-class"><p>Donald is the enemy of Chip and Dale, and always loses when fighting with them
+initially Donald starts with a happy mood
+creates a Mr.Donald duck
+</p>
+<p class="dr-returns"><strong class="dr-title">Returns:</strong> <em class="dr-type-object">object</em> <span class="dr-description">a Donald object</span></p>
+<p class="header">Usage
+</p>
+<pre class="javascript code"><code><b>var</b> donald<span class="s"> = </span><b>new</b> Donald();
+</code></pre>
+</div><div class="Donald-attack-section"><h3 id="Donald.attack" class="dr-method"><i class="dr-trixie">&#160;</i>Donald.attack(target)<a href="#Donald.attack" title="Link to this section" class="dr-hash">&#x2693;</a><a class="dr-sourceline" title="Go to line 52 in the source" href="https://github.com/tyt2y3/dr.js/blob/master/sample/donald.js#L52">&#x27ad;</a></h3>
+<div class="extra" id="Donald.attack-extra"></div></div><div class="dr-method"><p class="header">Parameters
+</p>
+<dl class="dr-parameters"><dt class="dr-param">target</dt>
+<dd class="dr-type"><em class="dr-type-object">object</em></dd>
+<dd class="dr-description">the target <a href="#Chipmunk" class="dr-link">Chipmunk</a> to attack</dd>
+</dl>
+<p class="dr-returns"><strong class="dr-title">Returns:</strong> <em class="dr-type-number">number</em> <span class="dr-description">hp deducted from target</span></p>
+</div><div class="Donald-mood-section"><h3 id="Donald.mood" class="dr-method"><i class="dr-trixie">&#160;</i>Donald.mood(…)<a href="#Donald.mood" title="Link to this section" class="dr-hash">&#x2693;</a><a class="dr-sourceline" title="Go to line 32 in the source" href="https://github.com/tyt2y3/dr.js/blob/master/sample/donald.js#L32">&#x27ad;</a></h3>
+<div class="extra" id="Donald.mood-extra"></div></div><div class="dr-method"><p class="header">getter
+</p>
+<dl class="dr-parameters"><dt class="dr-param">no parameter</dt>
+<dd class="dr-type"><em class="dr-type-null">null</em></dd>
+<dd class="dr-description">&#160;</dd>
+</dl>
+<p class="dr-returns"><strong class="dr-title">Returns:</strong> <em class="dr-type-string">string</em> <span class="dr-description">current mood of Donald</span></p>
+<p class="header">setter
+<p>set the mood of Donald
+</p>
+<dl class="dr-parameters"><dt class="dr-param">mood</dt>
+<dd class="dr-type"><em class="dr-type-string">string</em></dd>
+<dd class="dr-description">&#160;</dd>
+</dl>
+<p>possible values are:
+</p>
+<ol class="dr-json"><li>'happy' Donald is whistling<li>'angry' Donald is going to attack the chipmunks!<li>'upset' Donald loses his fight with them</ol>
 </div></div></div>
 <script>(function (ol) {
     if (!ol) {

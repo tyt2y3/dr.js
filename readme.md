@@ -9,12 +9,13 @@ A tiny but powerful documentation builder for Javascript projects. dr.js is buil
 - colorful tags plus syntax highlighted code snippets
 - printer friendly version
 - example: [Raphael](http://raphaeljs.com/reference.html) documentation is built with dr.js
+- example2: [source](https://github.com/tyt2y3/dr.js/blob/master/sample) and [documentation](http://tyt2y3.github.com/dr.js/sample/docs.html)
 
 ## Usage
 - first install [node.js](http://nodejs.org/) and npm
 - in the `dr.js/` directory, run `npm install`
 > if you work on a NTFS partition, you may receive `Error: EPERM, symlink '../nopt/bin/nopt.js'`
-> in this case you should copy `dr.js/node_modules/markdown/node_modules/nopt/bin/nopt.js` to `dr.js/node_modules/markdown/node_modules/.bin/nopt.js`
+> in this case you should copy `dr.js/node_modules/markdown/node_modules/nopt/bin/nopt.js` to `dr.js/node_modules/markdown/node_modules/.bin/nopt.js` manually
 - run `node dr config.json`
 
 ## json config
@@ -52,5 +53,6 @@ example
 - Jan26 2013
 	- forked from [DmitryBaranovskiy/dr.js](https://github.com/DmitryBaranovskiy/dr.js)
 	- support working in a different directory
-	- by default embed the css files
+	- by default embed the css and js files
+	- besides `method` and `property`, added tag `class`
 	- readme and usage examples
