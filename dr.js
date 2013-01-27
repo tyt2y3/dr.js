@@ -86,7 +86,6 @@ for (i = 0, ii = files.length; i < ii; i++) {
         })(filename);
     } else {
         console.log("\033[31mNo comments in Dr.js format found\033[0m");
-        break;
     }
 }
 var TOC = "",
