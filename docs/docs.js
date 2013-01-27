@@ -66,7 +66,7 @@
 
 /*\
  * E) Format
-* dr.js uses the `dr` format, which starts a section with `/*\` and end with `\*/`.
+* dr.js uses the `Dr.js` format, which starts a section with `/*\` and end with `\*/`.
 * 
 * Each line in a section starts with a symbol, the symbols can be
 * 

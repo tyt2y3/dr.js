@@ -60,7 +60,7 @@ example
 - `external_js`; similar to `external_css`, whether to embed the files specified in `scripts`
 
 ## Format
-dr.js uses the `dr` format, which starts a section with `/*\` and end with `\*/`.
+dr.js uses the `Dr.js` format, which starts a section with `/*\` and end with `\*/`.
 
 Each line in a section starts with a symbol, the symbols can be
 - `*` normal text, with markdown
