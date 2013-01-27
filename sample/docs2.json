@@ -1,0 +1,9 @@
+{
+    "title": "Chipmunk",
+    "output": "docs.html",
+	"directory": [{
+		"path": ".",
+		"link": "https://github.com/tyt2y3/dr.js/blob/master/sample",
+		"extension": [".js"]
+	}]
+}

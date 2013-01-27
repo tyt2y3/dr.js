@@ -1,11 +1,8 @@
 {
     "title": "dr.js",
     "output": "docs.html",
-    "scripts": [],
     "files": [{
         "path": "docs.js",
         "link": "https://github.com/tyt2y3/dr.js/blob/master/docs/docs.js"
-    }],
-    "external_css": false,
-    "external_js": false
+    }]
 }

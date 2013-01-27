@@ -21,7 +21,7 @@ function Donald()
  [ method ]
  **
  > getter
- - no parameter (null)
+ - (null) no parameter
  = (string) current mood of Donald
  > setter
  * set the mood of Donald

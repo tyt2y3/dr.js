@@ -461,6 +461,19 @@ html, body {
 #dr {
     margin: 0 auto;
 }
+.dr-doc code
+{
+	background: #FFF;
+	border-radius: 5px;
+	padding: 0 6px;
+	border: 1px solid #CCC;
+}
+.dr-doc pre code
+{
+	background: none;
+	padding: 0;
+	border: none;
+}
 .dr-doc code,
 .dr-type em,
 .dr-returns em,
@@ -790,9 +803,8 @@ p {
 </p>
 <p>In fact, this page is the result of running dr.js!
 </p>
-<div class="B) Features-section"><h2 id="B) Features" class="undefined"><i class="dr-trixie">&#160;</i>B) Features<a href="#B) Features" title="Link to this section" class="dr-hash">&#x2693;</a><a class="dr-sourceline" title="Go to line 21 in the source" href="https://github.com/tyt2y3/dr.js/blob/master/docs/docs.js#L21">&#x27ad;</a></h2>
-<div class="extra" id="B) Features-extra"></div></div><ul>
-<li>searchbox to filter methods and properties</li>
+<div class="B) Features-section"><h2 id="B) Features" class="undefined"><i class="dr-trixie">&#160;</i>B) Features<a href="#B) Features" title="Link to this section" class="dr-hash">&#x2693;</a><a class="dr-sourceline" title="Go to line 20 in the source" href="https://github.com/tyt2y3/dr.js/blob/master/docs/docs.js#L20">&#x27ad;</a></h2>
+<div class="extra" id="B) Features-extra"></div></div><p><li>searchbox to filter methods and properties</li>
 <li>generated document is a single file html, which is neat</li>
 <li>anchors and internal links</li>
 <li>link back to exact line of source code on github</li>
@@ -800,54 +812,52 @@ p {
 <li>printer friendly version</li>
 <li>example: <a href="http://raphaeljs.com/reference.html">Raphael</a> documentation is built with dr.js</li>
 <li>example2: <a href="https://github.com/tyt2y3/dr.js/blob/master/sample">source</a> and <a href="http://tyt2y3.github.com/dr.js/sample/docs.html">documentation</a></li>
-</ul>
-<div class="C) Usage-section"><h2 id="C) Usage" class="undefined"><i class="dr-trixie">&#160;</i>C) Usage<a href="#C) Usage" title="Link to this section" class="dr-hash">&#x2693;</a><a class="dr-sourceline" title="Go to line 36 in the source" href="https://github.com/tyt2y3/dr.js/blob/master/docs/docs.js#L36">&#x27ad;</a></h2>
-<div class="extra" id="C) Usage-extra"></div></div><ul>
-<li>first install <a href="http://nodejs.org/">node.js</a> and npm
-<li>in the `dr.js/` directory, run `npm install`
-<ul>
-<li> if you work on a NTFS partition, you may receive `Error: EPERM, symlink '../nopt/bin/nopt.js'`</li>
-<li> in this case you should copy `dr.js/node_modules/markdown/node_modules/nopt/bin/nopt.js` to `dr.js/node_modules/markdown/node_modules/.bin/nopt.js` manually</li>
-</ul>
-</li>
-<li>then run</li>
-</ul>
+<li>example3: <a href="http://tyt2y3.github.com/dr.js/docs/docs.html">docs</a></li>
+</p>
+<div class="C) Usage-section"><h2 id="C) Usage" class="undefined"><i class="dr-trixie">&#160;</i>C) Usage<a href="#C) Usage" title="Link to this section" class="dr-hash">&#x2693;</a><a class="dr-sourceline" title="Go to line 31 in the source" href="https://github.com/tyt2y3/dr.js/blob/master/docs/docs.js#L31">&#x27ad;</a></h2>
+<div class="extra" id="C) Usage-extra"></div></div><p><li>first install <a href="http://nodejs.org/">node.js</a> and npm</li>
+<li>in the <code>dr.js/</code> directory, run <code>npm install</code></li>
+</p>
+<p><p>if you work on a NTFS partition, you may receive <code>Error: EPERM, symlink &#39;../nopt/bin/nopt.js&#39;</code></p>
+<p>in this case you should copy <code>dr.js/node_modules/markdown/node_modules/nopt/bin/nopt.js</code> to <code>dr.js/node_modules/markdown/node_modules/.bin/nopt.js</code> manually</p>
+run
+</p>
 <pre class="javascript code"><code>node dr config.json
 </code></pre>
-<div class="D) json config-section"><h2 id="D) json config" class="undefined"><i class="dr-trixie">&#160;</i>D) json config<a href="#D) json config" title="Link to this section" class="dr-hash">&#x2693;</a><a class="dr-sourceline" title="Go to line 69 in the source" href="https://github.com/tyt2y3/dr.js/blob/master/docs/docs.js#L69">&#x27ad;</a></h2>
+<div class="D) json config-section"><h2 id="D) json config" class="undefined"><i class="dr-trixie">&#160;</i>D) json config<a href="#D) json config" title="Link to this section" class="dr-hash">&#x2693;</a><a class="dr-sourceline" title="Go to line 66 in the source" href="https://github.com/tyt2y3/dr.js/blob/master/docs/docs.js#L66">&#x27ad;</a></h2>
 <div class="extra" id="D) json config-extra"></div></div><p>example
 </p>
-<pre class="javascript code"><code>{
-    <i>"title"</i>: <i>"Chipmunk"</i>,
-    <i>"output"</i>: <i>"docs.html"</i>,
-    <i>"scripts"</i>: [],
-    <i>"files"</i>: [{
-        <i>"path"</i>: <i>"chipmunk.js"</i>,
-        <i>"link"</i>: <i>"https:<span class="c">//github.com/tyt2y3/dr.js/blob/master/sample/chipmunk.js"</i></span>
-    }],
-    <i>"external_css"</i>: <b>false</b>,
-    <i>"external_js"</i>: <b>false</b>
-}
+<pre class="javascript code"><code><i>"title"</i>: <i>"Chipmunk"</i>,
+<i>"output"</i>: <i>"docs.html"</i>,
+<i>"scripts"</i>: [],
+<i>"files"</i>: [{
+	<i>"path"</i>: <i>"chipmunk.js"</i>,
+	<i>"link"</i>: <i>"https:<span class="c">//github.com/tyt2y3/dr.js/blob/master/sample/chipmunk.js"</i></span>
+}],
+<i>"directory"</i>: [{
+	<i>"path"</i>: <i>"."</i>,
+	<i>"link"</i>: <i>"https:<span class="c">//github.com/tyt2y3/dr.js/blob/master/sample"</i>,</span>
+	<i>"extension"</i>: [<i>".js"</i>]
+}],
+<i>"external_css"</i>: <b>false</b>,
+<i>"external_js"</i>: <b>false</b>
 </code></pre>
-<p><code>title</code> is the text that will appear in <code>&lt;head&gt;&lt;title&gt;</code> and <code>&lt;body&gt;&lt;h1&gt;</code>
-</p>
-<p><code>output</code> is the output html
-</p>
-<p><code>scripts</code> are javasript files that will be included into the html via a <code>&lt;script&gt;</code> tag.
-</p>
-<p>this allows you to manipulate the html dynamically. since Raphael is a javascript library, <code>raphael.js</code> itself is being included into the documentation to make life examples, which is remarkable to javascript projects.
-</p>
-<p><code>files</code> are the script files to be processed
-</p>
-<p>   <code>path</code> is the url of the file
-   <code>link</code> is the link to a pretty printed version of the script file. every method and property remembers its line number in the source, clicking the ➭ button will bring you to <code>link#L12</code> where L12 is the line number.
-</p>
-<p><code>external_css</code>; optional, if set to true, the css files will be linked via a <code>&lt;link rel=&quot;stylesheet&quot;&gt;</code> tag. default is false, which the css files are embedded into html, so that <code>docs.html</code> is really a standalone, good-to-go html documentation.
-</p>
-<p><code>external_js</code>; similar to <code>external_css</code>, whether to embed the files specified in <code>scripts</code>
+<p><li><code>title</code> is the text that will appear in <code>&lt;head&gt;&lt;title&gt;</code> and <code>&lt;body&gt;&lt;h1&gt;</code></li>
+<li><code>output</code> is the output html</li>
+<li><code>scripts</code> are javasript files that will be included into the html via a <code>&lt;script&gt;</code> tag.</li>
+<li>this allows you to manipulate the html dynamically. since Raphael is a javascript library, <code>raphael.js</code> itself is being included into the documentation to make life examples, which is remarkable to javascript projects.</li>
+<li><code>files</code> are the script files to be processed</li>
+<li><code>path</code> is the url of the file</li>
+<li><code>link</code> is the link to a pretty printed version of the script file. every method and property remembers its line number in the source, clicking the ➭ button will bring you to <code>link#L12</code> where L12 is the line number.</li>
+<li><code>directory</code> can also process set of files in directories</li>
+<li><code>path</code> is the url of the directory</li>
+<li><code>link</code> is the base url of the link, filenames will be appended</li>
+<li><code>extension</code> file extensions to work on, e.g. <code>.js</code> <code>.html</code></li>
+<li><code>external_css</code>; optional, if set to true, the css files will be linked via a <code>&lt;link rel=&quot;stylesheet&quot;&gt;</code> tag. default is false, which the css files are embedded into html, so that <code>docs.html</code> is really a standalone, good-to-go html documentation.</li>
+<li><code>external_js</code>; similar to <code>external_css</code>, whether to embed the files specified in <code>scripts</code></li>
 </p>
 <p></p>
-<div class="E) Format-section"><h2 id="E) Format" class="undefined"><i class="dr-trixie">&#160;</i>E) Format<a href="#E) Format" title="Link to this section" class="dr-hash">&#x2693;</a><a class="dr-sourceline" title="Go to line 116 in the source" href="https://github.com/tyt2y3/dr.js/blob/master/docs/docs.js#L116">&#x27ad;</a></h2>
+<div class="E) Format-section"><h2 id="E) Format" class="undefined"><i class="dr-trixie">&#160;</i>E) Format<a href="#E) Format" title="Link to this section" class="dr-hash">&#x2693;</a><a class="dr-sourceline" title="Go to line 113 in the source" href="https://github.com/tyt2y3/dr.js/blob/master/docs/docs.js#L113">&#x27ad;</a></h2>
 <div class="extra" id="E) Format-extra"></div></div><p>dr.js uses the <code>dr</code> format, which starts a section with <code>/*\</code> and end with <code>\*/</code>.
 </p>
 <p>Each line in a section starts with a symbol, the symbols can be
@@ -894,18 +904,15 @@ p {
 </p>
 <p>The start of each section is given a <code>&lt;div class=&quot;extra&quot; id=&quot;IdentifierName-extra&quot;&gt;&lt;/div&gt;</code> element for manipulation by javascript.
 </p>
-<div class="F) Change log-section"><h2 id="F) Change log" class="undefined"><i class="dr-trixie">&#160;</i>F) Change log<a href="#F) Change log" title="Link to this section" class="dr-hash">&#x2693;</a><a class="dr-sourceline" title="Go to line 131 in the source" href="https://github.com/tyt2y3/dr.js/blob/master/docs/docs.js#L131">&#x27ad;</a></h2>
-<div class="extra" id="F) Change log-extra"></div></div><ul>
-<li>Jan26 2013
-  <ul>
-  <li>forked from <a href="https://github.com/DmitryBaranovskiy/dr.js">DmitryBaranovskiy/dr.js</a></li>
-  <li>support working in a different directory</li>
-  <li>by default embed the css and js files</li>
-  <li>besides `method` and `property`, added tag `class`</li>
-  <li>readme and usage examples</li>
-  </ul>
-</li>
-</ul>
+<div class="F) Change log-section"><h2 id="F) Change log" class="undefined"><i class="dr-trixie">&#160;</i>F) Change log<a href="#F) Change log" title="Link to this section" class="dr-hash">&#x2693;</a><a class="dr-sourceline" title="Go to line 124 in the source" href="https://github.com/tyt2y3/dr.js/blob/master/docs/docs.js#L124">&#x27ad;</a></h2>
+<div class="extra" id="F) Change log-extra"></div></div><p><li>Jan26 2013</li>
+<li>forked from <a href="https://github.com/DmitryBaranovskiy/dr.js">DmitryBaranovskiy/dr.js</a></li>
+<li>support working in a different directory</li>
+<li>by default embed the css and js files</li>
+<li>besides <code>method</code> and <code>property</code>, added tag <code>class</code></li>
+<li>readme and usage examples</li>
+<li>support running through directories</li>
+</p>
 </div></div>
 <script>(function (ol) {
     if (!ol) {

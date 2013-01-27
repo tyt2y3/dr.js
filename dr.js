@@ -38,6 +38,28 @@ if (files.length == 1 && path.extname(files[0]) == ".json") {
         files.push(json.files[i].path);
         srcs.push(json.files[i].link);
     }
+    for (var i = 0, ii = json.directory && json.directory.length; i < ii; i++) {
+		var ls = fs.readdirSync(json.directory[i].path);
+		for (var j=0, jj = ls && ls.length; j < jj; j++) {
+			if( json.directory[i].extension)
+				var isext = json.directory[i].extension.length==0;
+			else
+				var isext = true;
+				//if extension is undefined or is an empty array, assume all extensions
+			if( !isext)
+			for(var k=0, kk = json.directory[i].extension.length; k < kk; k++) {
+				if( json.directory[i].extension[k] === path.extname(ls[j])) {
+					isext = true;
+					break;
+				}
+			}
+			if( isext)
+			{
+				files.push( path.join(json.directory[i].path, ls[j]) );
+				srcs .push( path.join(json.directory[i].link, ls[j]) );
+			}
+		}
+    }
     output = json.output || "";
     scripts = json.scripts || [];
 }

@@ -283,9 +283,11 @@ module.exports = function (txt, filename, sourceFileName) {
             itemData = {};
             eve("doc.item", pointer[level[j]]);
             chunk += '<div class="' + name.replace(/\./g, "-") + '-section"><h' + hx + ' id="' + name + '" class="' + itemData.clas + '"><i class="dr-trixie">&#160;</i>' + name;
-            if (itemData.type && itemData.type.indexOf("method") + 1) {
+            if (itemData.type && 
+				(itemData.type.indexOf("method") + 1 ||
+				 itemData.type.indexOf("class") + 1 )) {
                 if (itemData.params) {
-                    if (itemData.params.length == 1) {
+                    if (itemData.params.length <= 3) {
                         chunk += "(" + itemData.params[0].join(", ") + ")";
                     } else if (!itemData.params.length) {
                         chunk += "()";
