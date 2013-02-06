@@ -121,3 +121,12 @@
 *	- readme and usage examples
 *	- support running through directories
 \*/
+
+/*\
+ * G) License
+ * Copyright (c) 2011 [Dmitry Baranovskiy](http://dmitry.baranovskiy.com/)
+ * 
+ * Copyright (c) 2013 Chris Tsang
+ * 
+ * Licensed under the [MIT license](http://www.opensource.org/licenses/mit-license.php).
+\*/

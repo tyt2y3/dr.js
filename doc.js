@@ -64,7 +64,10 @@ module.exports = function (txt, filename, sourceFileName) {
         return markdown.toHTML(String(text)).replace(rantiwrap, "$2").replace(ramp, '<em class="amp">&amp;</em>').replace(rlink, '$1<a href="#$2" class="dr-link">$2</a>');
     }
     function syntax(text) {
+    	if(text)
         return text.replace(/</g, "&lt;").replace(ramp, "&amp;").replace(rkeywords, "<b>$1</b>").replace(rstrings, "<i>$1</i>").replace(roperators, '<span class="s">$1</span>').replace(rdigits, '<span class="d">$1</span>').replace(rcomments, '<span class="c">$1</span>') + "\n";
+        else
+        return '\n';
     }
     function syntaxSrc(text) {
         var isend = text.match(/\*\//);
@@ -141,7 +144,10 @@ module.exports = function (txt, filename, sourceFileName) {
         var split = text.split(/(\s*[\(\)]\s*)/);
         split.shift();
         split.shift();
-        var types = split.shift().split(/\s*\|\s*/);
+        if( split)
+	        var types = split.shift().split(/\s*\|\s*/);
+	    else
+	        var types = ['undefined'];
         split.shift();
         html += '<p class="dr-returns"><strong class="dr-title">Returns:</strong> ';
         for (var i = 0, ii = types.length; i < ii; i++) {

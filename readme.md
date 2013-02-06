@@ -102,3 +102,8 @@ The start of each section is given a `<div class="extra" id="IdentifierName-extr
 	- besides `method` and `property`, added tag `class`
 	- readme and usage examples
 	- support running through directories
+
+## License
+Copyright (c) 2011 [Dmitry Baranovskiy](http://dmitry.baranovskiy.com/)
+Copyright (c) 2013 Chris Tsang
+Licensed under the [MIT license](http://www.opensource.org/licenses/mit-license.php).
